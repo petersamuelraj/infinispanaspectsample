@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:scehmaLocation="
+            urn:infinispan:config:7.2
+            http://www.infinispan.org/schemas/infinispan-config-7.2.xsd"
+            xmlns="urn:infinispan:config:7.2">
+    <cache-container  default-cache="attributeset-cache">
+        <!-- template configurations -->
+        <local-cache-configuration name="local-template">
+            <expiration interval="10000" lifespan="50000" max-idle="50000"/>
+        </local-cache-configuration>
+
+        <!-- cache definitions -->
+        <local-cache name="attributeset-cache" configuration="local-template" />
+    </cache-container>
+</infinispan>
